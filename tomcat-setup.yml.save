@@ -10,19 +10,13 @@
     ui_manager_pass: sofia      # UI manager user password
     ui_admin_username: sofia                    # User who can access bpth manager and admin UI sections
     ui_admin_pass: sofia          # UI admin password
-    warName: hello_world.war
-    warPath: /usr/share/tomcat/webapps
-
 
   roles:
     - tomcat
 
-#  tasks:
-#  - name: Download WAR to server
-#    command: wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war -O {{ warPath }}/{{ warName}}
-#    notify: Restart tomcat
-
-  handlers:
-    - name: Restart tomcat
-      service: name=tomcat state=restarted
-
+- maven_artifact:
+    group_id: com.company
+    artifact_id: web-app
+    extension: war
+    repository_url: 'https://repo.company.com/maven'
+    dest: /var/lib/tomcat7/webapps/web-app.war  
