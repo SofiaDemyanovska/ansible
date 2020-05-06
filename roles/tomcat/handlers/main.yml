@@ -2,3 +2,9 @@
   service:
     name: tomcat
     state: restarted
+
+#- name: check tomcat enable
+#  shell: systemctl status tomcat
+#  register: temp
+
+
