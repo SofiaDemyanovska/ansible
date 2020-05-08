@@ -24,6 +24,10 @@
   - name: Give insecure permissions to an existing file
     file: dest=/usr/share/tomcat/webapps owner=root group=tomcat mode='777'
 
+
+  - name: restart tomcat
+    service: name=tomcat state=restarted
+
   - name: Give insecure permissions to an existing file
     file: dest=/usr/share/tomcat/webapps/hello_world.war owner=root group=tomcat mode='644'
     notify: Restart tomcat
@@ -65,6 +69,6 @@
     debug:
       var: services_state
 
-  handlers:
-    - name: Restart tomcat
-      service: name=tomcat state=restarted
+#  handlers:
+#    - name: Restart tomcat
+#      service: name=tomcat state=restarted

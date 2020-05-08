@@ -1,3 +1,5 @@
 [tomcat-nodes]
 linux1 ansible_host=15.236.92.164
 linux2 ansible_host=35.180.173.57
+linux3 ansible_host=35.180.115.70
+linux4 ansible_host=35.180.115.91
